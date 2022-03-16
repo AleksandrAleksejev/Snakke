@@ -40,37 +40,16 @@ namespace Snake
 					snake.Move();
 				}
 
-				Thread.Sleep(100);
+				Thread.Sleep(150);
 				if (Console.KeyAvailable)
 				{
 					ConsoleKeyInfo key = Console.ReadKey();
 					snake.HandleKey(key.Key);
 				}
 			}
-			WriteGameOver();
 			Console.ReadLine();
 		}
-
-
-		static void WriteGameOver()
-		{
-			int xOffset = 25;
-			int yOffset = 8;
-			Console.ForegroundColor = ConsoleColor.Red;
-			Console.SetCursorPosition(xOffset, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-			WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
-			yOffset++;
-			WriteText("Автор: Aleksandr Aleksejev", xOffset + 2, yOffset++);
-			WriteText("При помощи GeekBrains", xOffset + 1, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-		}
-
-		static void WriteText(String text, int xOffset, int yOffset)
-		{
-			Console.SetCursorPosition(xOffset, yOffset);
-			Console.WriteLine(text);
-		}
+		
 
 	}
 }
