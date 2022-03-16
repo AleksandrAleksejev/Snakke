@@ -52,11 +52,8 @@ namespace Snake
 	
 		
 
-		static void WriteText(String text, int xOffset, int yOffset)
-		{
-			Console.SetCursorPosition(xOffset, yOffset);
-			Console.WriteLine(text);
-		}
+
+		
 
 	}
 }
