@@ -7,10 +7,10 @@ namespace SnakeGame
 {
     public enum SpeedGame
     {
-        Low,
-        AboveNormal,
-        Normal,
-        BelowNormal,
-        Fast
+        Low, // маленькая скорость 
+        AboveNormal, // выше средней 
+        Normal, // средняя 
+        BelowNormal, // меньше нормальной 
+        Fast, // высокая скорость 
     }
 }

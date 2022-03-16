@@ -20,27 +20,27 @@ namespace Snake
 			Snake snake = new Snake(p, 4, Direction.RIGHT);
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+			FoodCreator foodCreator = new FoodCreator(80, 25, '$'); // Создание еды в приделах рамки 
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
 			while (true)
 			{
-				if (walls.IsHit(snake) || snake.IsHitTail())
+				if (walls.IsHit(snake) || snake.IsHitTail()) // если Змейка коснулась стенки то игра заканчивается 
 				{
 					break;
 				}
-				if (snake.Eat(food))
+				if (snake.Eat(food))  //если Змейка косается точки еды то появляется новая еда в новой точке
 				{
 					food = foodCreator.CreateFood();
 					food.Draw();
 				}
-				else
+				else // движение змейуи 
 				{
-					snake.Move();
+					snake.Move(); // 
 				}
 
-				Thread.Sleep(150);
+				Thread.Sleep(150); // скорость змейки 
 				if (Console.KeyAvailable)
 				{
 					ConsoleKeyInfo key = Console.ReadKey();
