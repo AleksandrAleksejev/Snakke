@@ -50,7 +50,7 @@ namespace Snake
 			}
 		}
 
-		public bool IsHit(Point p)
+		public bool IsHit(Point p) // метод который проверяет есть ли пересечение по координатам текущей точки и точкой заданного аргумента  
 		{
 			return p.x == this.x && p.y == this.y;
 		}
@@ -61,10 +61,10 @@ namespace Snake
 			Console.Write(sym);
 		}
 
-		public void Clear()
+		public void Clear() // метод для того чтобы убрать последнюю точку экрана 
 		{
-			sym = ' ';
-			Draw();
+			sym = ' '; // символ пробел
+			Draw(); // рисует символ пробел
 		}
 
 		public override string ToString()

@@ -10,39 +10,40 @@ namespace Snake
 	{
 		List<Figure> wallList;
 
-		public Walls(int mapWidth, int mapHeight)
+		public Walls(int mapWidth, int mapHeight) // конструктор принимающий габариты карты 
 		{
 			wallList = new List<Figure>();
 
 			// Отрисовка рамочки
+			//на основе габаритов рисует гаризонтальные и вертикальные линии 
 			HorizontalLine upLine = new HorizontalLine(0, mapWidth - 2, 0, '+');
 			HorizontalLine downLine = new HorizontalLine(0, mapWidth - 2, mapHeight - 1, '+');
 			VerticalLine leftLine = new VerticalLine(0, mapHeight - 1, 0, '+');
 			VerticalLine rightLine = new VerticalLine(0, mapHeight - 1, mapWidth - 2, '+');
-
+			// создав линии мы добвляем их в список которых хранится в данном класса 
 			wallList.Add(upLine);
 			wallList.Add(downLine);
 			wallList.Add(leftLine);
 			wallList.Add(rightLine);
 		}
 
-		internal bool IsHit(Figure figure)
+		internal bool IsHit(Figure figure) // функция для проверки столкнулась ли змейка со стеной
 		{
-			foreach (var wall in wallList)
+			foreach (var wall in wallList)// проверка на пересечение точек 
 			{
-				if (wall.IsHit(figure))
+				if (wall.IsHit(figure)) // если змейка столкнулось со стенкой  то 
 				{
-					return true;
+					return true; // возвращает тру и запускается бесконечный цикл
 				}
 			}
-			return false;
+			return false; // возвращает знвчение Фолс
 		}
 
-		public void Draw()
+		public void Draw() // метод где по очередно пробегается по всем фигурам и 
 		{
 			foreach (var wall in wallList)
 			{
-				wall.Draw();
+				wall.Draw(); // вызывает для них метод Draw
 			}
 		}
 	}

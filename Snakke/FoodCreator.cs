@@ -14,18 +14,18 @@ namespace Snake
 
 		Random random = new Random();
 
-		public FoodCreator(int mapWidth, int mapHeight, char sym)
+		public FoodCreator(int mapWidth, int mapHeight, char sym) // конструктор для места где будет появляться еда на поле и символ отображения еды 
 		{
-			this.mapWidht = mapWidth;
-			this.mapHeight = mapHeight;
-			this.sym = sym;
+			this.mapWidht = mapWidth; // ширена поля 
+			this.mapHeight = mapHeight; // высота поля 
+			this.sym = sym; // символ еды 
 		}
 
-		public Point CreateFood()
+		public Point CreateFood() // метод создания еды 
 		{
-			int x = random.Next(2, mapWidht - 2);
-			int y = random.Next(2, mapHeight - 2);
-			return new Point(x, y, sym);
+			int x = random.Next(2, mapWidht - 2); // генерирует произвольные координаты 
+			int y = random.Next(2, mapHeight - 2); // генерирует произвольные координаты 
+			return new Point(x, y, sym); // появляется новая точка с этими  координатами 
 		}
 	}
 }

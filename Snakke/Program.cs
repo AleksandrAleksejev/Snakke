@@ -21,33 +21,33 @@ namespace Snake
 			snake.Draw(); // отрисовка змейки на поле 
 
 			FoodCreator foodCreator = new FoodCreator(80, 25, '$'); // Создание еды в приделах рамки 
-			Point food = foodCreator.CreateFood(); 
+			Point food = foodCreator.CreateFood(); // вызов метода создания еды и создания точки 
 			food.Draw(); // отрисовка точки(еды) на полн 
 
-			while (true)
+			while (true) // бесконечный цикл 
 			{
-				if (walls.IsHit(snake) || snake.IsHitTail()) // если Змейка коснулась стенки то игра заканчивается 
+				if (walls.IsHit(snake) || snake.IsHitTail()) // если Змейка коснулась стенки или хвоста то игра заканчивается 
 				{
-					break;
+					break; // остановка программы 
 				}
 				if (snake.Eat(food))  //если Змейка косается точки еды то появляется новая еда в новой точке
 				{
-					food = foodCreator.CreateFood();
-					food.Draw();
+					food = foodCreator.CreateFood(); // вызов метода появыления еды на экране 
+					food.Draw();// отрисовкк еды на экране 
 				}
 				else // движение змейки
 				{
 					snake.Move(); // движение змейки 
 				}
 
-				Thread.Sleep(150); // скорость змейки 
-				if (Console.KeyAvailable)
+				Thread.Sleep(150); // скорость задержки перемещения точек по экрану тоесть скорость змейки не меняется пока не будет нажата клавиша 
+				if (Console.KeyAvailable) // проверка на то была ли нажата клавиша 
 				{
-					ConsoleKeyInfo key = Console.ReadKey();
-					snake.HandleKey(key.Key);
+					ConsoleKeyInfo key = Console.ReadKey(); // получает значение нажатой клавиши 
+					snake.HandleKey(key.Key); // вызов метода проверки нажатия клавишь 
 				}
 			}
-			Console.ReadLine();
+			Console.ReadLine();// конец программы 
 		}
 	
 		
