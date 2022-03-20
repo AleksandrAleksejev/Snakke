@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Snake
 {
-	class Figure
+	class Figure // класс который будет использоваться в наследники в других классах 
 	{
 		protected List<Point> pList;
 
-		public void Draw()
+		public void Draw()// конструктор для отрисовки точек на экране 
 		{
 			foreach (Point p in pList)
 			{

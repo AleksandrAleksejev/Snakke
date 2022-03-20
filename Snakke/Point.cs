@@ -16,27 +16,27 @@ namespace Snake
 		{
 		}
 
-		public Point(int x, int y, char sym) // Конструктор 
+		public Point(int x, int y, char sym) // Конструктор вызывания функции для создания точки 
 		{
 			this.x = x;
 			this.y = y;
 			this.sym = sym;
 		}
 
-		public Point(Point p)
+		public Point(Point p) // Конструктор чтобы задавать  точки с помощью другой точки 
 		{
 			x = p.x;
 			y = p.y;
 			sym = p.sym;
 		}
 
-		public void Move(int offset, Direction direction)
+		public void Move(int offset, Direction direction) // конструктор чтобы здвигать точки в определенных направленияз 
 		{
-			if (direction == Direction.RIGHT)
+			if (direction == Direction.RIGHT) // если значение direction равно право то координата икс увеличивается на размер смещения 
 			{
 				x = x + offset;
 			}
-			else if (direction == Direction.LEFT)
+			else if (direction == Direction.LEFT) // если координата влево то икс уменьшится на росстаяние offset
 			{
 				x = x - offset;
 			}

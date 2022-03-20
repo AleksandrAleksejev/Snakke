@@ -10,19 +10,19 @@ namespace Snake
 	{
 		static void Main(string[] args)
 		{
-            Console.SetBufferSize(250, 80);
+            Console.SetBufferSize(250, 80); //Функция для установления размера окна и чтобы не было возможности перемотки 
 
 			Walls walls = new Walls(80, 25);
 			walls.Draw();
 
 			// Отрисовка точек			
-			Point p = new Point(4, 5, '*');
-			Snake snake = new Snake(p, 4, Direction.RIGHT);
-			snake.Draw();
+			Point p = new Point(4, 5, '*'); // функция согдания точки 
+			Snake snake = new Snake(p, 4, Direction.RIGHT); // создание змейки с размеров 4 точки и направление в право 
+			snake.Draw(); // отрисовка змейки на поле 
 
 			FoodCreator foodCreator = new FoodCreator(80, 25, '$'); // Создание еды в приделах рамки 
-			Point food = foodCreator.CreateFood();
-			food.Draw();
+			Point food = foodCreator.CreateFood(); 
+			food.Draw(); // отрисовка точки(еды) на полн 
 
 			while (true)
 			{
@@ -35,9 +35,9 @@ namespace Snake
 					food = foodCreator.CreateFood();
 					food.Draw();
 				}
-				else // движение змейуи 
+				else // движение змейки
 				{
-					snake.Move(); // 
+					snake.Move(); // движение змейки 
 				}
 
 				Thread.Sleep(150); // скорость змейки 

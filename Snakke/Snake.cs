@@ -10,15 +10,15 @@ namespace Snake
 	{
 		Direction direction;
 
-		public Snake(Point tail, int length, Direction _direction)
+		public Snake(Point tail, int length, Direction _direction) // конструктор котрый задает стартовую точку появления и какое направление у змейки на поле 
 		{
 			direction = _direction;
-			pList = new List<Point>();
-			for (int i = 0; i < length; i++)
+			pList = new List<Point>(); // список точек
+			for (int i = 0; i < length; i++) // цикл в котором несколько раз создается копия хвостовой точки котороая переданна в конструкторе 
 			{
-				Point p = new Point(tail);
-				p.Move(i, direction);
-				pList.Add(p);
+				Point p = new Point(tail); // добавление определенного количества точек в определенной координате 
+				p.Move(i, direction); // точка сдвигается на i позиций по направлению Direct
+				pList.Add(p); // добавление точки в списк
 			}
 		}
 
