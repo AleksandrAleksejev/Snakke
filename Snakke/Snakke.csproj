@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="HiNetCloud.AxInterop.WMPLib" Version="20.7.2.10" />
+    <PackageReference Include="HiNetCloud.Interop.WMPLib" Version="20.7.2.10" />
     <PackageReference Include="WMPLib" Version="1.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

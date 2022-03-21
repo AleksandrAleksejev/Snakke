@@ -11,23 +11,26 @@ namespace Snake
 		public int x;
 		public int y;
 		public char sym;
+		public ConsoleColor color;
 
 		public Point()// пустой конструктор 
 		{
 		}
 
-		public Point(int x, int y, char sym) // Конструктор вызывания функции для создания точки 
+		public Point(int x, int y, char sym, ConsoleColor color_) // Конструктор вызывания функции для создания точки 
 		{
 			this.x = x;
 			this.y = y;
 			this.sym = sym;
+			color = color_;
 		}
 
-		public Point(Point p) // Конструктор чтобы задавать  точки с помощью другой точки 
+		public Point(Point p, ConsoleColor color_) // Конструктор чтобы задавать  точки с помощью другой точки 
 		{
 			x = p.x;
 			y = p.y;
 			sym = p.sym;
+			color = color_;
 		}
 
 		public void Move(int offset, Direction direction) // конструктор чтобы здвигать точки в определенных направленияз 
@@ -59,6 +62,7 @@ namespace Snake
 		{
 			Console.SetCursorPosition(x, y);
 			Console.Write(sym);
+			Console.ForegroundColor = color;
 		}
 
 		public void Clear() // метод для того чтобы убрать последнюю точку экрана 

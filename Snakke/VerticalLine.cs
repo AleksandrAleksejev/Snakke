@@ -13,7 +13,7 @@ namespace Snake
 			pList = new List<Point>(); // список точек 
 			for (int y = yUp; y <= yDown; y++)// цикл создания Вертикальных точек
 			{
-				Point p = new Point(x, y, sym);// создание точек с нужными координатами 
+				Point p = new Point(x, y, sym, ConsoleColor.White);// создание точек с нужными координатами 
 				pList.Add(p); // добавления точек в список 
 			}
 		}

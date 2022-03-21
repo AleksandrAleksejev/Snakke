@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snakke;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +13,19 @@ namespace Snake
 		{
             Console.SetBufferSize(250, 80); //Функция для установления размера окна и чтобы не было возможности перемотки 
 
-			Walls walls = new Walls(80, 25);
+			Walls walls = new Walls(85, 25);
 			walls.Draw();
 
 			// Отрисовка точек			
-			Point p = new Point(4, 5, '*'); // функция согдания точки 
+			Point p = new Point(4, 5, '@', ConsoleColor.Green); // функция согдания точки 
 			Snake snake = new Snake(p, 4, Direction.RIGHT); // создание змейки с размеров 4 точки и направление в право 
-			snake.Draw(); // отрисовка змейки на поле 
-
-			FoodCreator foodCreator = new FoodCreator(80, 25, '$'); // Создание еды в приделах рамки 
+			snake.Draw(); // отрисовка змейки на поле
+			FoodCreator foodCreator = new FoodCreator(85, 25, '$', ConsoleColor.White); // Создание еды в приделах рамки 
 			Point food = foodCreator.CreateFood(); // вызов метода создания еды и создания точки 
 			food.Draw(); // отрисовка точки(еды) на полн 
+			Score score = new Score(0, 1);
+			score.speed = 350;
+			score.ScoreWrite();
 
 			while (true) // бесконечный цикл 
 			{
@@ -34,13 +37,19 @@ namespace Snake
 				{
 					food = foodCreator.CreateFood(); // вызов метода появыления еды на экране 
 					food.Draw();// отрисовкк еды на экране 
+					score.ScoreUp();
+					score.ScoreWrite();
+					if (score.ScoreUp())
+					{
+						score.speed -= 10;
+					}
 				}
 				else // движение змейки
 				{
 					snake.Move(); // движение змейки 
 				}
 
-				Thread.Sleep(150); // скорость задержки перемещения точек по экрану тоесть скорость змейки не меняется пока не будет нажата клавиша 
+				Thread.Sleep(score.speed); // скорость задержки перемещения точек по экрану тоесть скорость змейки не меняется пока не будет нажата клавиша 
 				if (Console.KeyAvailable) // проверка на то была ли нажата клавиша 
 				{
 					ConsoleKeyInfo key = Console.ReadKey(); // получает значение нажатой клавиши 

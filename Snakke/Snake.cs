@@ -16,7 +16,7 @@ namespace Snake
 			pList = new List<Point>(); // список точек
 			for (int i = 0; i < length; i++) // цикл в котором несколько раз создается копия хвостовой точки котороая переданна в конструкторе 
 			{
-				Point p = new Point(tail); // добавление определенного количества точек в определенной координате 
+				Point p = new Point (tail,ConsoleColor.Green); // добавление определенного количества точек в определенной координате 
 				p.Move(i, direction); // точка сдвигается на i позиций по направлению Direct
 				pList.Add(p); // добавление точки в списк
 			}
@@ -36,7 +36,7 @@ namespace Snake
 		public Point GetNextPoint() // функция которая вычисляет где окажется точка змейки в следующий момент 
 		{
 			Point head = pList.Last(); // текущаа позиция головы змейки до того как она переместилась вызыванием метода Last 
-			Point nextPoint = new Point(head); // создание новой точки которая является копией предыдущего положения головы змейки 
+			Point nextPoint = new Point(head, ConsoleColor.Green); // создание новой точки которая является копией предыдущего положения головы змейки 
 			nextPoint.Move(1, direction); // точка сдвигается по направлению directionn 
 			return nextPoint; // возвращаем переменную 
 		}

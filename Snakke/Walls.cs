@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snakke;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,10 @@ namespace Snake
 			wallList.Add(downLine);
 			wallList.Add(leftLine);
 			wallList.Add(rightLine);
+			Params settings = new Params();
+			Sounds sound = new Sounds(settings.GetResourceFolder());
+			sound.Play("Game.mp3");
+			Sounds soundeat = new Sounds(settings.GetResourceFolder());
 		}
 
 		internal bool IsHit(Figure figure) // функция для проверки столкнулась ли змейка со стеной
