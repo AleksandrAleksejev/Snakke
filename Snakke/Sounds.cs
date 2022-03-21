@@ -1,33 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using WMPLib;
 
-namespace Snakke
+namespace Snake
 {
-    public class Sound
+    public class Sounds
     {
         WindowsMediaPlayer player = new WindowsMediaPlayer();
         private string pathToMedia;
 
-        public Sound(string pathToResources)
+        public Sounds(string pathToResources)
         {
             pathToMedia = pathToResources;
         }
+
         public void Play()
         {
-            player.URL = pathToMedia + "media.mp3";
+            player.URL = pathToMedia + "music.mp3";
             player.settings.volume = 30;
             player.controls.play();
             player.settings.setMode("loop", true);
-
         }
 
         public void Play(string songName)
         {
             player.URL = pathToMedia + songName + "Game.mp3";
             player.controls.play();
-
         }
 
         public void PlayEat()

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Text;
 
 namespace Snakke
@@ -10,12 +12,10 @@ namespace Snakke
 		private string resourcesFoler;
 		public Params()
 		{
-			var ind = Directory.GetCurrentDirectory().ToString()
-				.IndexOf("bin", StringComparison.Ordinal);
+			var ind = Directory.GetCurrentDirectory().ToString().IndexOf("bin", StringComparison.Ordinal);
 
 			string binFolder =
-				Directory.GetCurrentDirectory().ToString().Substring(0, ind)
-					.ToString();
+				Directory.GetCurrentDirectory().ToString().Substring(0, ind).ToString();
 
 			resourcesFoler = binFolder + "resources//";
 		}
