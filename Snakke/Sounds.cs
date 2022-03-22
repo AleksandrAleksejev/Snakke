@@ -17,23 +17,24 @@ namespace Snake
             pathToMedia = pathToResources;
         }
 
-        public void Play()
+        public void Play(string sound) // Публичный метод (Звук фона) 
         {
-            player.URL = pathToMedia + "music.mp3";
+            player.URL = pathToMedia + sound;
             player.settings.volume = 30;
             player.controls.play();
             player.settings.setMode("loop", true);
         }
 
-        public void Play(string songName)
+        public void Stop(string sound)// Публичный метод (Звук Смерти)
         {
-            player.URL = pathToMedia + songName + "Game.mp3";
+            player.URL = pathToMedia + sound;
+            player.settings.volume = 100;
             player.controls.play();
         }
 
-        public void PlayEat()
+        public void PlayEat(string sound) //Публичный метод (Звук поедания)
         {
-            player.URL = pathToMedia + "Eat.mp3";
+            player.URL = pathToMedia + sound;
             player.settings.volume = 100;
             player.controls.play();
         }

@@ -20,7 +20,7 @@ namespace Snake
 			this.mapWidht = mapWidth; // ширена поля 
 			this.mapHeight = mapHeight; // высота поля 
 			this.sym = sym; // символ еды 
-			color = color_;
+			color = color_; // цвет еды 
 		}
 
 		public Point CreateFood() // метод создания еды 

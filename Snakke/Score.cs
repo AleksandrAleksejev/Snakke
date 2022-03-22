@@ -4,32 +4,36 @@ using System.Text;
 
 namespace Snakke
 {
-    public class Score
+    public class Score // класс счетчика 
     {
         private int score;
         public int level;
         public int speed;
-        public Score(int score, int level)
+        public Score(int score, int level) // конструктор вызывания функции для создания цифр на счетчике
         {
             this.score = score;
             this.level = level;
         }
-        public bool ScoreUp()
+        public bool ScoreUp()// функция для добавления 100 баллов при сьедение 1 $ и при достижению 1000 баллов повышение уровня и скорости на 10 единиц 
         {
-            score += 1;
-            if (score % 2 == 0)
+            score += 100;
+            if (score % 1000 == 0)
             {
                 level += 1;
                 return true;
             }
             else { return false; }
         }
-        public void ScoreWrite()
+        public void ScoreWrite()// отрисовка счетчика на экране 
         {
-            Console.SetCursorPosition(100, 2);
-            Console.WriteLine("Score:" + score.ToString());
-            Console.SetCursorPosition(100, 4);
-            Console.WriteLine("Level:" + level.ToString());
+            Console.SetCursorPosition(100, 2);// координаты отрисовки счетчика 
+            Console.WriteLine("Очки:" + score.ToString()); // счетчик очков 
+            Console.SetCursorPosition(100, 3);// координаты отрисовки счетчика 
+            Console.WriteLine("Уровень:" + level.ToString()); // счетчик уровня 
+            Console.SetCursorPosition(90, 1); // координаты 
+            Console.WriteLine("=========================="); // отриисовка рамки на экране 
+            Console.SetCursorPosition(90, 4); // координаты 
+            Console.WriteLine("=========================="); // отриисовка рамки на экране 
         }
     }
 }
