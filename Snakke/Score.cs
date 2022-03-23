@@ -6,7 +6,7 @@ namespace Snakke
 {
     public class Score // класс счетчика 
     {
-        private int score;
+        public int score;
         public int level;
         public int speed;
         public Score(int score, int level) // конструктор вызывания функции для создания цифр на счетчике
@@ -14,7 +14,7 @@ namespace Snakke
             this.score = score;
             this.level = level;
         }
-        public bool ScoreUp()// функция для добавления 100 баллов при сьедение 1 $ и при достижению 1000 баллов повышение уровня и скорости на 10 единиц 
+        public bool Scoree()// функция для добавления 100 баллов при сьедение 1 $ и при достижению 1000 баллов повышение уровня и скорости на 10 единиц 
         {
             score += 100;
             if (score % 1000 == 0)

@@ -44,9 +44,9 @@ namespace Snake
 					soundeat.Play("Eat.mp3");
 					food = foodCreator.CreateFood(); // вызов метода появыления еды на экране 
 					food.Draw();// отрисовкк еды на экране 
-					score.ScoreUp();
+					score.Scoree();
 					score.ScoreWrite();
-					if (score.ScoreUp())
+					if (score.Scoree())
 					{
 						score.speed -= 10;
 					}
