@@ -25,7 +25,7 @@ namespace Snake
 			Point food = foodCreator.CreateFood(); // вызов метода создания еды и создания точки 
 			food.Draw(); // отрисовка точки(еды) на полн 
 			Score score = new Score(0, 1);
-			score.speed = 350;
+			score.speed = 200;
 			score.vivodScore();
 			Params settings = new Params();
 			Sounds soundeat = new Sounds(settings.GetResourceFolder());
