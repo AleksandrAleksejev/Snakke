@@ -7,8 +7,8 @@ namespace Snakke
     public class Score // класс счетчика 
     {
         public int score;
-        public int level;
         public int speed;
+        public int level;
         public Score(int score, int level) // конструктор вызывания функции для создания цифр на счетчике
         {
             this.score = score;

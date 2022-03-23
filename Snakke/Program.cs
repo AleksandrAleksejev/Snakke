@@ -11,7 +11,7 @@ namespace Snake
 	{
 		static void Main(string[] args)
 		{
-			
+			//int score = 0;
 			Console.SetBufferSize(250, 80); //Функция для установления размера окна и чтобы не было возможности перемотки 
 
 			Walls walls = new Walls(85, 25);
@@ -74,6 +74,7 @@ namespace Snake
 			Console.SetCursorPosition(xOffset, yOffset++);
 			WriteText("=====================", xOffset, yOffset++);
 			WriteText(" G A M E    O V E R ", xOffset, yOffset++);
+			//WriteText("$Your score is {score} ", xOffset, yOffset++);
 			WriteText("=====================", xOffset, yOffset++);
 		}
 		static void WriteText(String text, int xOffset, int yOffset)
