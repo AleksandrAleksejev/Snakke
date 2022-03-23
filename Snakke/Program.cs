@@ -26,7 +26,7 @@ namespace Snake
 			food.Draw(); // отрисовка точки(еды) на полн 
 			Score score = new Score(0, 1);
 			score.speed = 350;
-			score.ScoreWrite();
+			score.vivodScore();
 			Params settings = new Params();
 			Sounds soundeat = new Sounds(settings.GetResourceFolder());
 			Sounds sounddeath = new Sounds(settings.GetResourceFolder());
@@ -45,7 +45,7 @@ namespace Snake
 					food = foodCreator.CreateFood(); // вызов метода появыления еды на экране 
 					food.Draw();// отрисовкк еды на экране 
 					score.Scoree();
-					score.ScoreWrite();
+					score.vivodScore();
 					if (score.Scoree())
 					{
 						score.speed -= 10;

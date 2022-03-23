@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Snakke
 {
-	public class Params
+	public class Params // Класс для того чтобы читать файл парамс и воспроиводилась музыка 
 	{
 		private string resourcesFoler;
 		public Params()

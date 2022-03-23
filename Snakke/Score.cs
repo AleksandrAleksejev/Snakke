@@ -24,7 +24,7 @@ namespace Snakke
             }
             else { return false; }
         }
-        public void ScoreWrite()// отрисовка счетчика на экране 
+        public void vivodScore()// отрисовка счетчика на экране 
         {
             Console.SetCursorPosition(100, 2);// координаты отрисовки счетчика 
             Console.WriteLine("Очки:" + score.ToString()); // счетчик очков 
